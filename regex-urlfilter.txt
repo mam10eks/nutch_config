@@ -1,0 +1,26 @@
+# 1_basic_protokoll_and_type
+-^(file|ftp|mailto):
+
+# skip image and other suffixes we can't yet parse
+# for a more extensive coverage use the urlfilter-suffix plugin
+-\.(gif|GIF|jpg|JPG|png|PNG|ico|ICO|css|CSS|sit|SIT|eps|EPS|wmf|WMF|zip|ZIP|mpg|MPG|xls|XLS|gz|GZ|rpm|RPM|tgz|TGZ|mov|MOV|exe|EXE|jpeg|JPEG|bmp|BMP|js|JS|avi)$
+-\.(gif|GIF|jpg|JPG|png|PNG|ico|ICO|css|CSS|sit|SIT|eps|EPS|wmf|WMF|zip|ZIP|mpg|MPG|xls|XLS|gz|GZ|rpm|RPM|tgz|TGZ|mov|MOV|exe|EXE|jpeg|JPEG|bmp|BMP|js|JS|avi)\?.*
+
+
+# 10_lips.informatik.uni-leipzig.de
+-.*[\?&]order=.*
+-.*[\?&]sort=.*
+
+# everything pointint to .../pub/... and .../files/... is always fine
++http://lips.informatik.uni-leipzig.de/pub/.*
++http://lips.informatik.uni-leipzig.de/files/.*
+
+# under .../browse we only want to page over the result pages
++http://lips.informatik.uni-leipzig.de$
++http://lips.informatik.uni-leipzig.de/$
++http://lips.informatik.uni-leipzig.de/browse$
++http://lips.informatik.uni-leipzig.de/browse/results$
++http://lips.informatik.uni-leipzig.de/browse/results\?page=[0-9]+$
+
+# forbit everything else
+-http://lips.informatik.uni-leipzig.de.*
