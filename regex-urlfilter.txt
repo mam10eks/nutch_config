@@ -24,3 +24,7 @@
 
 # forbit everything else
 -http://lips.informatik.uni-leipzig.de.*
+
+
+# 15_informatik.uni-leipzig.de
++informatik.uni-leipzig.de
