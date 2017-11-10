@@ -27,4 +27,13 @@
 
 
 # 15_informatik.uni-leipzig.de
+# disallow everything under corpora.informatik
+-corpora.informatik.uni-leipzig.de
+
+-informatik.uni-leipzig.de/~meyer.*[?&]y=[0-9]+.*
+-informatik.uni-leipzig.de/~meyer.*[?&]d=[0-9]+.*
+-informatik.uni-leipzig.de/~meyer.*[?&]m=[0-9]+.*
+
+# allow everything under informatik for the moment
 +informatik.uni-leipzig.de
+
