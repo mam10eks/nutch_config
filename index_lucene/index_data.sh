@@ -30,7 +30,6 @@ function nutch_parse()
 	fi
 }
 
-
 function valid_nutch_segments()
 {
 	if [ "$#" == "1" ] && [ -n "$1" ] && [ "$1" != "/" ] && [ -d "${1}/crawl/segments" ]; then
@@ -41,6 +40,7 @@ function valid_nutch_segments()
 		done
 	fi
 }
+
 
 ############################################################################
 # Start temporary solr
@@ -57,8 +57,6 @@ if [ -z "${CONTAINER_ID}" ]; then
 	echo "Seems like container couldnt be started since the id is ${CONTAINER_ID}"
 	exit 1
 fi
-
-sdsds
 
 
 ############################################################################
