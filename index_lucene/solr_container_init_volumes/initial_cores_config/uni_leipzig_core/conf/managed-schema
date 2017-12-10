@@ -138,7 +138,7 @@
   <field name="cityGeoNameId" type="int" indexed="true" stored="true"/>
   <field name="cityName" type="string" indexed="true" stored="true"/>
   <field name="connType" type="string" indexed="true" stored="true"/>
-  <field name="content" type="text_general" indexed="true" stored="true"/>
+  <field name="content" type="text_general" termPositions="true" termVectors="true" indexed="true" termOffsets="true" stored="true"/>
   <field name="contentLength" type="string" indexed="false" stored="true"/>
   <field name="contentName" type="string" indexed="true" stored="true"/>
   <field name="continentCode" type="string" indexed="true" stored="true"/>
