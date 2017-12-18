@@ -67,8 +67,9 @@ RESULT_DIR="total_crawl"
 
 rm -Rf ${RESULT_DIR} && mkdir ${RESULT_DIR}
 
+CRAWL_DIRECTORIES=("../../nutch_crawl_backup/raspberry_pi_mars/21_11_2017/lips.informatik.uni-leipzig.de")
 #CRAWL_DIRECTORIES=("../../theol.uni-leipzig.de" "../../robot.informatik.uni-leipzig.de")
-CRAWL_DIRECTORIES=("../../theol.uni-leipzig.de" "../../informatik_uni_leipzig_de" "../../math.uni-leipzig.de" "../../spowi.uni-leipzig.de" "../../lips.informatik.uni-leipzig.de" "../../medizinische_fakultaet" "../../robot.informatik.uni-leipzig.de")
+#CRAWL_DIRECTORIES=("../../theol.uni-leipzig.de" "../../informatik_uni_leipzig_de" "../../math.uni-leipzig.de" "../../spowi.uni-leipzig.de" "../../lips.informatik.uni-leipzig.de" "../../medizinische_fakultaet" "../../robot.informatik.uni-leipzig.de")
 ALL_SEGMENTS=""
 
 for CRAWL_DIRECTORY in "${CRAWL_DIRECTORIES[@]}"
@@ -82,6 +83,13 @@ done
 
 nutch dedup "${RESULT_DIR}/crawldb"
 nutch solrindex http://localhost:8983/solr/uni_leipzig_core "${RESULT_DIR}/crawldb" -linkdb "${RESULT_DIR}/linkdb" $(echo "${ALL_SEGMENTS}")
+
+
+############################################################################
+# Custom cleaning
+############################################################################
+echo "\nCUSTOM CLEANING\n"
+java -jar custom-index-cleaning-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 
 ############################################################################
