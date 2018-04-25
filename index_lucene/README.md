@@ -1,5 +1,15 @@
 # Index Nutch Segments into Lucene index
 
+## Installation
+Please install:
+* nutch 1.x
+* docker
+* java
+* [The custom-index-cleaner jar](https://github.com/mam10eks/search-homepage-of-university-leipzig/tree/master/custom-index-cleaning)
+  * simply put the jar next to the index_data.sh script
+
+
+## Usage
 First you need to adapt the file `index_data.sh`:
 * Adapt the variable `CRAWL_DIRECTORIES` that it contains all directories where crawls could be obtained
   * **Please only operate on copies of those directories! Never use the original data. Best approach is to backup regularly your crawls, and use copies of this backups as input for this script**
